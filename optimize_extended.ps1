@@ -100,7 +100,7 @@ Write-Host "Disabling tips at login screen..." -ForegroundColor Yellow
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisableWindowsConsumerFeatures" -Value 1 -Type DWord -Force
 
 # 20. Remove Old Windows Update Files (winsxs)
-Write-Host "Cleaning up WinSxS Component Store (this can take a while)..." -ForegroundColor Yellow
+Write-Host "Cleaning up WinSxS Component Store (this can take a while depending on disk space, usually 5-30 min, but its worth it!)..." -ForegroundColor Yellow
 Dism.exe /online /Cleanup-Image /StartComponentCleanup /Quiet /NoRestart
 
 # 21. Disable Animations for Faster UI
